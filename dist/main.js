@@ -16,14 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
         output.textContent = "Running ID3...\n";
         try {
             // Get Accuracy First
-            const accuracyResponse = yield fetch("http://localhost:8080/accuracy");
+            const accuracyResponse = yield fetch("https://temp-sb-back.onrender.com/accuracy");
             if (!accuracyResponse.ok)
                 throw new Error("Failed to fetch accuracy");
             const accuracy = yield accuracyResponse.json();
             output.textContent += `\nAccuracy: ${accuracy.toFixed(2)}%`;
             // Get Tree Structure
             // List Rules
-            const rulesResponse = yield fetch("http://localhost:8080/rules?measure=infoGain");
+            const rulesResponse = yield fetch("https://temp-sb-back.onrender.com/rules?measure=infoGain");
             if (!rulesResponse.ok)
                 throw new Error("Failed to fetch rules");
             const rules = yield rulesResponse.json();

@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
 
       // Get Accuracy First
-      const accuracyResponse = await fetch("http://localhost:8080/accuracy");
+      const accuracyResponse = await fetch("https://temp-sb-back.onrender.com/accuracy");
       if (!accuracyResponse.ok) throw new Error("Failed to fetch accuracy");
 
       const accuracy: number = await accuracyResponse.json();
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
       // List Rules
-      const rulesResponse = await fetch("http://localhost:8080/rules?measure=infoGain");
+      const rulesResponse = await fetch("https://temp-sb-back.onrender.com/rules?measure=infoGain");
       if (!rulesResponse.ok) throw new Error("Failed to fetch rules");
 
       const rules: string[] = await rulesResponse.json();
